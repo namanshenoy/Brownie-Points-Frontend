@@ -1,4 +1,27 @@
 <template>
+  <v-content>
+    <v-layout row ma-5>
+      <v-flex xs12>
+        <v-form v-model="loginValid">
+          <h1 style="text-align:center">Create Account</h1>
+          <br>
+          <v-text-field v-model="fname" type="text" placeholder="First Name"></v-text-field>
+          <v-text-field v-model="lname" type="text" placeholder="Last Name"></v-text-field>
+          <v-text-field v-model="username" type="text" placeholder="Username"></v-text-field>
+          <v-text-field v-model="password" type="text" placeholder="Email"></v-text-field>
+          <v-text-field v-model="econf" type="text" placeholder="Confirm Email"></v-text-field>
+          <v-text-field v-model="username" type="password" placeholder="password"></v-text-field>
+
+          <div class="flex-c">
+            <v-btn type="submit" class="pure-button pure-button-primary" v-on:click="create">Create</v-btn>
+            <v-btn type="submit" class="pure-button pure-button-primary" v-on:click="cancel">Cancel</v-btn>
+          </div>
+
+        </v-form>
+      </v-flex>
+    </v-layout>
+  </v-content>
+  <!--
   <div class="col-md-12 createAccount" id="createAccount">
     <form class="pure-form pure-form-stacked" v-on:submit.prevent="doLogin" id="form">
       <fieldset>
@@ -32,8 +55,8 @@
         <button type="submit" class="pure-button pure-button-primary" v-on:click="cancel">Cancel</button>
       </fieldset>
     </form>
-
   </div>
+  -->
 </template>
 
 <script>
@@ -42,6 +65,7 @@ export default {
   name: 'CreateAccount',
   data () {
     return {
+      loginValid: false,
       username: '',
       fname: '',
       lname: '',
@@ -77,24 +101,11 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-form {
-  padding-top: 200px;
-  font-size: 20px;
-  text-align: center;
-  position: relative;
+.flex-c{
+  display: flex;
+  justify-content: center;
 }
-
-input[type="text"]{
-  width: 50%;
-  border: 1px solid #555;
-}
-input[type="password"]{
-  width: 50%;
-  border: 1px solid #555;
-}
-
-button {
-  font-size: 20px;
-  margin-left: 10px;
+.flex-c > *{
+  flex: 1 1 0;
 }
 </style>

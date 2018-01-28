@@ -1,20 +1,35 @@
 <template>
-  <div class="col-md-12 login" id="login">
-    <form>
-      <div class="col-md-12">
-        username: <input type="text" v-model="username"><br>
-      </div>
-      <div class="col-md-12">
-        password: <input type="password" v-model="password"><br>
-      </div></br>
-
-      <div class="col-md-12">
-          <button type="submit" v-on:click="login">Login</button>
-          <button type="submit" v-on:click="signup">Create Account</button>
-      </div>
-
-    </form>
-  </div>
+<v-content>
+  <v-layout row wrap ma-3>
+    <v-flex xs12 >
+      <h1 class="flex-c large-text">Brownie Points</h1>
+    </v-flex>
+    <v-flex xs12>
+      <img src="./../assets/brownie.png" style="max-width:80%; margin-top: 25%; margin-bottom: 25%; margin-left: 10%;">
+    </v-flex>
+    <v-flex xs12 class="login" id="login">
+      <v-form v-model="loginValid">
+        <v-text-field
+          label="Username"
+          v-model="username"
+          required
+        ></v-text-field>
+        <v-text-field
+          label="Password"
+          v-model="password"
+          type="password"
+          required
+        ></v-text-field>
+        <div class="flex-c">
+          <v-btn @click="login" :disabled="!loginValid">
+            submit
+          </v-btn>
+          <v-btn @click="signup">Create Account</v-btn>
+        </div>
+      </v-form>
+    </v-flex>
+  </v-layout>
+</v-content>
 </template>
 
 <script>
@@ -24,7 +39,8 @@ export default {
   data () {
     return {
       username: '',
-      password: ''
+      password: '',
+      loginValid: false
     }
   },
   methods: {
@@ -56,24 +72,16 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-form {
-  padding-top: 200px;
-  font-size: 20px;
-  text-align: center;
-  position: relative;
-}
 
-input[type="text"]{
-  width: 50%;
-  border: 1px solid #555;
+.flex-c{
+  display: flex;
+  justify-content: center;
 }
-input[type="password"]{
-  width: 50%;
-  border: 1px solid #555;
+.flex-c > *{
+  flex: 1 1 0;
 }
-
-button {
-  font-size: 20px;
-  margin-left: 10px;
+.large-text{
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 3em;
 }
 </style>
