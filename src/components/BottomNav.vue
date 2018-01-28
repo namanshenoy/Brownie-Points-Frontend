@@ -1,6 +1,6 @@
 <template>
-  <v-card height="0px" dark>
-    <v-bottom-nav  :value="true" :active.sync="e1" color="white darken-2">
+  <v-card height="0px">
+    <v-bottom-nav absolute shift :value="true" :active.sync="e1" color="transparent">
       <v-btn flat color="teal" v-on:click="account" value="account">
         <span>Account</span>
         <v-icon>home</v-icon>
@@ -27,7 +27,7 @@
     },
     methods: {
       account: function () {
-        this.$router.push('/user/chia/account')
+        this.$router.push('/user/caleb/account')
       },
       history: function () {
         this.$router.push('/user/caleb')

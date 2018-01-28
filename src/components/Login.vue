@@ -52,7 +52,8 @@ export default {
         email: ''
       })
         .then(function (res) {
-           // console.log(res.data)
+          self.$parent.user = self.username
+          // console.log(res.data)
           document.cookie = 'token=' + res.data.token + ';path=/'
           // console.log(res.data.username);
           self.$router.push('/user/' + res.data.username + '/pay')
