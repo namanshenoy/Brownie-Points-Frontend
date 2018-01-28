@@ -25,12 +25,15 @@
         e1: 'recent'
       }
     },
+    computed: {
+      user: parent.user
+    },
     methods: {
       account: function () {
-        this.$router.push('/user/caleb/account')
+        this.$router.push('/user/' + this.user + '/account')
       },
       history: function () {
-        this.$router.push('/user/caleb')
+        this.$router.push('/user/' + this.user)
       },
       friends: function () {
 

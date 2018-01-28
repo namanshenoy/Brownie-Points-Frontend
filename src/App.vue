@@ -31,6 +31,7 @@ export default {
   },
   data: function () {
     return {
+      user: '',
       cordova: Vue.cordova,
       plugins: {
         'cordova-plugin-camera': function () {

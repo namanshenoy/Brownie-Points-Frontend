@@ -10,7 +10,7 @@
           <v-text-field v-model="username" type="text" placeholder="Username"></v-text-field>
           <v-text-field v-model="password" type="text" placeholder="Email"></v-text-field>
           <v-text-field v-model="econf" type="text" placeholder="Confirm Email"></v-text-field>
-          <v-text-field v-model="username" type="password" placeholder="password"></v-text-field>
+          <v-text-field v-model="password" type="password" placeholder="password"></v-text-field>
 
           <div class="flex-c">
             <v-btn type="submit" class="pure-button pure-button-primary" v-on:click="create">Create</v-btn>
