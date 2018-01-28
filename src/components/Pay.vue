@@ -170,7 +170,7 @@ export default {
       }
     },
     cancel: function () {
-      this.$router.push('/user/chia')
+      this.$router.push('/user/' + window.location.pathname.split('/')[2])
     }
   },
   data () {

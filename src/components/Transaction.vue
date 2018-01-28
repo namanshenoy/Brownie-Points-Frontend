@@ -1,7 +1,7 @@
 
 <template>
 <div>
-   <v-content>
+   <v-content dark>
       <v-container grid-list-md text-xs-center>
            <v-layout row wrap>
              <v-flex xs12>
@@ -66,8 +66,14 @@
 
 <script>
 /* eslint-disable */
+import BottomNav from './BottomNav'
+
+/* eslint-disable */
 export default{
   name: "Transaction",
+  components: {
+    BottomNav
+  },
   data: function () {
     return {
       query: "",
@@ -108,7 +114,7 @@ export default{
     },
 
     pay: function () {
-      this.$router.push('/user/caleb/pay')
+      this.$router.push('/user/' + window.location.pathname.split('/')[2] + '/pay')
     }
   }
 }
