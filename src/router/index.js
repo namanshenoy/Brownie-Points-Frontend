@@ -34,5 +34,6 @@ export default new Router({
       path: '/signup',
       component: CreateAccount
     }
-  ]
+  ],
+  mode: 'history'
 })

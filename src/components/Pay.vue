@@ -6,7 +6,7 @@
          <v-layout row wrap>
            <v-flex xs12>
               <v-card dark color="dark">
-               <input type="text" v-model="search" placeholder="Search"
+               <input type="text" v-model="sendto" placeholder="Search"
 
                >
              </v-card>
@@ -97,12 +97,16 @@
 <script>
 import Vue from 'vue'
 import BottomNav from './BottomNav'
+import axios from 'axios'
 
 export default {
   name: 'Pay',
   components: {
     BottomNav
   },
+  props: [
+    'username'
+  ],
   computed: {
     matches () {
       return this.suggestions.filter((obj) => {
@@ -148,20 +152,33 @@ export default {
       window.alert('Vue.cordova.camera not found !')
     },
     pay$: function () {
-      if (this.search === '') {
+      var self = this
+      if (this.sendto === '') {
 
       } else {
-        console.log(this.search)
+        axios.post('http://104.196.56.42:8080/api/send/', {
+          to_address: self.sendto,
+          amount: self.display
+        }, {
+          headers: {Authorization: 'JWT ' + self.getCookie('token')}
+            //  make sure to include JWT with the space
+        })
+          .then(function (res) {
+            console.log(res)
+          })
+          .catch(function (err) {
+            console.log(err)
+          })
       }
     },
     cancel: function () {
-      this.$router.push('/user/caleb')
+      this.$router.push('/user/chia')
     }
   },
   data () {
     return {
-      search: '',
-      display: '0',
+      sendto: '',
+      display: 0,
       decimalAdded: false,
       pay: true,
       cordova: Vue.cordova,

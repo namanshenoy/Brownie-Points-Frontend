@@ -1,16 +1,18 @@
 <template>
   <div class="col-md-12 login" id="login">
     <form>
+      <img src="./assets/creamie_brownie.png" /></br>
       <div class="col-md-12">
-        username: <input type="text" v-model="username"><br>
+        Username: <input type="text" v-model="username"><br>
       </div>
+    </br>
       <div class="col-md-12">
-        password: <input type="password" v-model="password"><br>
+        Password: <input type="password" v-model="password"><br>
       </div></br>
 
       <div class="col-md-12">
-          <button type="submit" v-on:click="login">Login</button>
-          <button type="submit" v-on:click="signup">Create Account</button>
+          <v-btn type="submit" v-on:click.prevent="login">Login</v-btn>
+          <v-btn type="submit" v-on:click="signup">Create Account</v-btn>
       </div>
 
     </form>
@@ -36,10 +38,11 @@ export default {
         email: ''
       })
         .then(function (res) {
-          // console.log(res.data)
+           // console.log(res.data)
           document.cookie = 'token=' + res.data.token + ';path=/'
           // console.log(res.data.username);
           self.$router.push('/user/' + res.data.username)
+          // console.log(self.getCookie('token'))
         })
         .catch(function (err) {
           console.log(err)
@@ -75,5 +78,11 @@ input[type="password"]{
 button {
   font-size: 20px;
   margin-left: 10px;
+}
+
+img {
+  padding-bottom: 50px;
+  width: 80%;
+  height: 80%;
 }
 </style>

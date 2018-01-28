@@ -27,7 +27,7 @@
     },
     methods: {
       account: function () {
-        this.$router.push('/user/caleb/account')
+        this.$router.push('/user/chia/account')
       },
       history: function () {
         this.$router.push('/user/caleb')

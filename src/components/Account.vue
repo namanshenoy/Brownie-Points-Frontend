@@ -23,13 +23,13 @@
 
              <v-flex xs6>
                 <v-card dark color="dark">
-                   <v-card-text class="px-0">Email</v-card-text>
+                   <v-card-text class="px-0">Address</v-card-text>
                 </v-card>
              </v-flex>
 
              <v-flex xs6>
                 <v-card dark color="dark">
-                   <v-card-text class="px-0">{{email}}</v-card-text>
+                   <v-card-text id="address" class="px-0">{{this.address}}</v-card-text>
                 </v-card>
              </v-flex>
 
@@ -41,7 +41,7 @@
 
              <v-flex xs6>
                 <v-card dark color="dark">
-                   <v-card-text class="px-0">{{balance}}</v-card-text>
+                   <v-card-text class="px-0">{{this.balance}}</v-card-text>
                 </v-card>
               </v-flex>
           </v-layout>
@@ -64,26 +64,39 @@ export default{
   },
   data: function () {
     return {
-      email: '',
+      address: '',
       balance: ''
     }
   },
   methods: {
+
     getWallet: function () {
-      console.log('XXXXXX')
       var self = this
-      axios.post('http://104.196.56.42:8080/api/wallet/',
+      axios.get('http://104.196.56.42:8080/api/wallet/',
         {
           headers: {Authorization: 'JWT ' + self.getCookie('token')}
           //  make sure to include JWT with the space
         })
         .then(function (res) {
-          console.log(res.data)
+          console.log(res)
+          self.address = res.data[0].address
+          self.balance = res.data[0].token_balance
         })
         .catch(function (error) {
           console.log(error)
         })
     }
+  },
+  mounted () {
+    this.getWallet()
   }
 }
 </script>
+
+<style>
+#address {
+  overflow: hidden
+}
+
+
+</style>

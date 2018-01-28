@@ -1,6 +1,5 @@
 <template>
-
-  <div class="home" id="home">
+  <v-app dark>
     <v-content>
       <v-container grid-list-md text-xs-center>
         <v-layout row wrap>
@@ -15,23 +14,14 @@
               <button type="submit" v-on:click="auth">Authenticate</button>
             </v-card>
           </v-flex>
+          </br></br>
+
         </v-layout>
       </v-container>
     </v-content>
-  </br></br>
-    <div class="col-md-12">
-      <div>
-        <vue-good-table
-          :columns="columns"
-          :rows="rows"/>
-      </div>
-    </div>
-
-    </br></br></br></br></br></br>
-      <BottomNav />
-
-  </div>
-</template>
+    <BottomNav />
+  </v-app>
+  </template>
 
 <script>
 // import TransactionItem from './TransactionItem.vue'

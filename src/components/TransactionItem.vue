@@ -1,5 +1,10 @@
 <template>
-  
+  <v-flex xs12>
+    <v-card dark color="dark">
+       <v-card-text class="px-0">Account Information</v-card-text>
+    </v-card>
+  </v-flex>
+
 </template>
 
 <script>
