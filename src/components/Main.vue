@@ -1,10 +1,29 @@
 <template>
-  <v-app id="app">
-    <v-content fluid ma-0>
+  <v-app id="app" dark>
+    <v-content>
       <v-layout justify-center>
-        <router-view/>
+        <v-flex xs5>
+          <v-card>
+            <v-card-title>Card Title</v-card-title>
+            <v-card-text>
+              <div v-if="cordova && !cordova.deviceready" class="alert">
+                The `deviceready` event has not been triggered.
+                <br />
+                Check the <a href="https://github.com/kartsims/vue-cordova#troubleshooting">Troubleshooting section</a> of vue-cordova's README.
+              </div>
+              <div v-if="cordova && cordova.deviceready" class="alert">
+                DEVICE IS READY YOU POS
+                <br />
+                Check the <a href="https://github.com/kartsims/vue-cordova#troubleshooting">Troubleshooting section</a> of vue-cordova's README.
+              </div>
+              <a @click="alert()">CLICK ME</a>
+            </v-card-text>
+          </v-card>
+          <router-view/>
+        </v-flex>
       </v-layout>
     </v-content>
+    <bottom-nav></bottom-nav>
   </v-app>
 </template>
 
@@ -30,7 +49,6 @@ export default {
   },
   data: function () {
     return {
-      user: '',
       cordova: Vue.cordova,
       plugins: {
         'cordova-plugin-camera': function () {
@@ -76,11 +94,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.flex-c{
-  dispay: flex;
-  justify-content: center;
-}
-.flex-c > *{
-  flex: 1 1 0;
-}
+
 </style>
