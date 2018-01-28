@@ -15,6 +15,7 @@ Vue.config.productionTip = false
 
 Vue.use(Vuetify)
 import('vuetify/dist/vuetify.min.css')
+import('./assets/stylus/styles.css')
 
 Vue.mixin({
   methods: {

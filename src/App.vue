@@ -1,6 +1,6 @@
 <template>
-  <v-app id="app" dark>
-    <v-content>
+  <v-app id="app">
+    <v-content fluid ma-0>
       <v-layout justify-center>
         <router-view/>
       </v-layout>
@@ -76,5 +76,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.flex-c{
+  dispay: flex;
+  justify-content: center;
+}
+.flex-c > *{
+  flex: 1 1 0;
+}
 </style>

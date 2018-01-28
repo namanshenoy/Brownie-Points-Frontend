@@ -1,3 +1,9 @@
+Node version: v9.3.0
+
+Cordova version: 8.0.0
+
+Config.xml file: 
+
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cordova.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>testapp</name>
@@ -26,3 +32,25 @@
     <engine name="ios" spec="^4.5.4" />
     <engine name="android" spec="^7.0.0" />
 </widget>
+
+
+Plugins: 
+
+cordova-plugin-whitelist
+
+Android platform:
+
+*************************************************************************
+The "android" command is deprecated.
+For manual SDK, AVD, and project management, please use Android Studio.
+For command-line tools, use tools/bin/sdkmanager and tools/bin/avdmanager
+*************************************************************************
+Running /usr/local/Caskroom/android-sdk/3859397/tools/bin/avdmanager list target
+
+Available Android targets:
+
+iOS platform:
+
+Xcode 9.2
+Build version 9C40b
+
