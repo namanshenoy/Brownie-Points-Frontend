@@ -8,7 +8,7 @@
           <v-text-field v-model="fname" type="text" placeholder="First Name"></v-text-field>
           <v-text-field v-model="lname" type="text" placeholder="Last Name"></v-text-field>
           <v-text-field v-model="username" type="text" placeholder="Username"></v-text-field>
-          <v-text-field v-model="password" type="text" placeholder="Email"></v-text-field>
+          <v-text-field v-model="email" type="text" placeholder="Email"></v-text-field>
           <v-text-field v-model="econf" type="text" placeholder="Confirm Email"></v-text-field>
           <v-text-field v-model="password" type="password" placeholder="password"></v-text-field>
 

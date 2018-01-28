@@ -52,7 +52,7 @@ export default {
         email: ''
       })
         .then(function (res) {
-          parent.user = this.username
+          self.$parent.user = self.username
           // console.log(res.data)
           document.cookie = 'token=' + res.data.token + ';path=/'
           // console.log(res.data.username);
