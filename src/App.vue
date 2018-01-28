@@ -5,7 +5,6 @@
         <router-view/>
       </v-layout>
     </v-content>
-    <!-- <bottom-nav></bottom-nav> -->
   </v-app>
 </template>
 

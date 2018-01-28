@@ -53,7 +53,7 @@ export default {
       })
         .then(function (res) {
           self.$parent.user = self.username
-          // console.log(res.data)
+          console.log(self.$parent.user)
           document.cookie = 'token=' + res.data.token + ';path=/'
           // console.log(res.data.username);
           self.$router.push('/user/' + res.data.username + '/pay')

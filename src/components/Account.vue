@@ -1,5 +1,5 @@
 <template>
-  <v-app id="account_info" dark>
+  <div>
      <v-content>
         <v-container grid-list-md text-xs-center>
            <v-layout row wrap>
@@ -17,7 +17,7 @@
 
              <v-flex xs6>
                 <v-card dark color="dark">
-                   <v-card-text class="px-0">{{this.username}}</v-card-text>
+                   <v-card-text class="px-0">{{ userParent }}</v-card-text>
                 </v-card>
              </v-flex>
 
@@ -29,7 +29,7 @@
 
              <v-flex xs6>
                 <v-card dark color="dark">
-                   <v-card-text id="address" class="px-0">{{this.address}}</v-card-text>
+                   <v-card-text id="address" class="px-0">{{ address}}</v-card-text>
                 </v-card>
              </v-flex>
 
@@ -41,14 +41,14 @@
 
              <v-flex xs6>
                 <v-card dark color="dark">
-                   <v-card-text class="px-0">{{this.balance}}</v-card-text>
+                   <v-card-text class="px-0">{{balance}}</v-card-text>
                 </v-card>
               </v-flex>
           </v-layout>
         </v-container>
       </v-content>
-     <BottomNav />
-  </v-app>
+      <bottom-nav />
+</div>
 </template>
 
 <script>
@@ -66,6 +66,11 @@ export default{
     return {
       address: '',
       balance: ''
+    }
+  },
+  computed: {
+    userParent () {
+      return window.location.pathname.split('/')[2]
     }
   },
   methods: {

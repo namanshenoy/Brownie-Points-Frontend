@@ -1,5 +1,5 @@
 <template>
-<v-app id="pay" dark>
+  <div>
    <v-content>
       <v-container grid-list-md text-xs-center>
          <v-layout row wrap>
@@ -88,8 +88,8 @@
          </v-layout>
       </v-container>
    </v-content>
-   <BottomNav />
-</v-app>
+   <bottom-nav />
+</div>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
   <v-card height="0px">
-    <v-bottom-nav absolute shift :value="true" :active.sync="e1" color="transparent">
+      <v-bottom-nav  :value="true" :active.sync="e1" color="white darken-2">
       <v-btn flat color="teal" v-on:click="account" value="account">
         <span>Account</span>
         <v-icon>home</v-icon>
@@ -8,10 +8,6 @@
       <v-btn flat color="teal" v-on:click="history" value="history">
         <span>History</span>
         <v-icon>history</v-icon>
-      </v-btn>
-      <v-btn flat color="teal" value="friends">
-        <span>Friends</span>
-        <v-icon>place</v-icon>
       </v-btn>
     </v-bottom-nav>
   </v-card>
@@ -26,7 +22,6 @@
       }
     },
     computed: {
-      user: parent.user
     },
     methods: {
       account: function () {

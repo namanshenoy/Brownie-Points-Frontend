@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/Login'
-import Home from '@/components/Home'
+import Transaction from '@/components/Transaction'
 import Pay from '@/components/Pay'
 import Account from '@/components/Account'
 import CreateAccount from '@/components/CreateAccount'
@@ -17,7 +17,7 @@ export default new Router({
     },
     {
       path: '/user/:username',
-      component: Home,
+      component: Transaction,
       props: true
     },
     {

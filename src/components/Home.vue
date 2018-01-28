@@ -17,8 +17,8 @@
           :rows="rows"/>
       </div>
     </div>
-      <BottomNav />
-  </div>
+    <bottom-nav />
+   </div>
 </template>
 
 <script>
