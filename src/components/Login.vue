@@ -55,7 +55,7 @@ export default {
           // console.log(res.data)
           document.cookie = 'token=' + res.data.token + ';path=/'
           // console.log(res.data.username);
-          self.$router.push('/user/' + res.data.username)
+          self.$router.push('/user/' + res.data.username + '/pay')
         })
         .catch(function (err) {
           console.log(err)

@@ -1,24 +1,13 @@
 <template>
-
   <div class="home" id="home">
     <v-content>
-      <v-container grid-list-md text-xs-center>
+      <v-container>
         <v-layout row wrap>
           <v-flex xs12>
-             <v-card dark color="dark">
-                <v-card-text class="px-0">Transaction History</v-card-text>
-             </v-card>
-          </v-flex>
-
-          <v-flex xs12>
-            <v-card dark color="dark">
-              <button type="submit" v-on:click="auth">Authenticate</button>
-            </v-card>
           </v-flex>
         </v-layout>
       </v-container>
     </v-content>
-  </br></br>
     <div class="col-md-12">
       <div>
         <vue-good-table
@@ -26,10 +15,7 @@
           :rows="rows"/>
       </div>
     </div>
-
-    </br></br></br></br></br></br>
       <BottomNav />
-
   </div>
 </template>
 

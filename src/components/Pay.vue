@@ -1,6 +1,5 @@
 <template>
 <v-app id="pay" dark>
-  </br>
    <v-content>
       <v-container grid-list-md text-xs-center>
          <v-layout row wrap>
@@ -11,7 +10,6 @@
                >
              </v-card>
           </v-flex>
-        </br></br>
            <v-flex xs12>
               <v-card dark color="dark">
                  <v-card-text class="px-0">{{display}}</v-card-text>
