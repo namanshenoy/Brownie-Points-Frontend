@@ -1,6 +1,8 @@
-# testapp
+# Brownie Points
 
-> A Vue.js project
+This is a vuejs mobile application that implements a cryptocurrency token for instant payment.
+
+Made by Caleb Lee, Derek Zhang, Naman Shenoy, and Corey Collins for BrownHacks 2018.
 
 ## Build Setup
 
